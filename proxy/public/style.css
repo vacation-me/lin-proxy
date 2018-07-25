@@ -1,14 +1,12 @@
-#Info {
+body {
+  margin: 0;
+}
+
+#Search {
   display: block;
 }
 
-#CountDown {
-  margin-left: 5px;
+#Details {
   display: inline-block;
+  position: relative;
 }
-
-#Related {
-  margin: 10%;
-  display: block;
-}
-
