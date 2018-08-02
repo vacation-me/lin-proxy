@@ -38,7 +38,7 @@ app.use(
     target:
       process.env.ENV === "prod"
         ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
-        : "http://localhost:3001"
+        : "http://127.0.0.1:3001"
   })
 );
 
@@ -48,7 +48,7 @@ app.use(
     target:
       process.env.ENV === "prod"
         ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
-        : "http://localhost:3001"
+        : "http://127.0.0.1:3001"
   })
 );
 
