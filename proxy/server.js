@@ -16,7 +16,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:2999"
+        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:80"
         : "http://127.0.0.1:2999"
   })
 );
@@ -26,7 +26,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:2999"
+        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:80"
         : "http://127.0.0.1:2999"
   })
 );
@@ -37,7 +37,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:80"
         : "http://127.0.0.1:3001"
   })
 );
@@ -47,7 +47,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:80"
         : "http://127.0.0.1:3001"
   })
 );
