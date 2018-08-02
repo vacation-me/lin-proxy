@@ -6,4 +6,5 @@ RUN npm install
 COPY . /app
 EXPOSE 3000
 ENV PORT 3000
+ENV ENV prod
 CMD ["npm", "start"]

@@ -14,14 +14,20 @@ app.use("/search/:searchQuery", express.static("public"));
 app.use(
   "/api/searchRecords",
   proxy({
-    target: "http://127.0.0.1:2999"
+    target:
+      process.env.ENV === "prod"
+        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:2999"
+        : "http://127.0.0.1:2999"
   })
 );
 
 app.use(
   "/api/searchListings/:searchQuery",
   proxy({
-    target: "http://127.0.0.1:2999"
+    target:
+      process.env.ENV === "prod"
+        ? "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:2999"
+        : "http://127.0.0.1:2999"
   })
 );
 
@@ -29,14 +35,20 @@ app.use(
 app.use(
   "/api/details/:listingId",
   proxy({
-    target: "http://localhost:3001"
+    target:
+      process.env.ENV === "prod"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com"
+        : "http://localhost:3001"
   })
 );
 
 app.use(
   "/api/details/:listingId/highlights/:highlightId",
   proxy({
-    target: "http://localhost:3001"
+    target:
+      process.env.ENV === "prod"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com"
+        : "http://localhost:3001"
   })
 );
 
