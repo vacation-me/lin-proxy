@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "push": "docker build . -t bcronin2/fec-airbnh-proxy:app && docker push bcronin2/fec-airbnh-proxy:app",
+    "build": "docker build . -t bcronin2/fec-airbnh-proxy:app && docker push bcronin2/fec-airbnh-proxy:app",
     "start": "nodemon ./server.js"
   },
   "keywords": [],
