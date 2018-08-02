@@ -17,9 +17,12 @@ body {
   margin: auto;
 }
 
-#Details {
+#infoContainer {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  margin-right: 0;
+  max-width: 600px;
+  margin: 1rem 0 4rem auto;
 }
 
 #book {
@@ -36,7 +39,16 @@ body {
   #book {
     width: 0;
   }
+  #infoContainer {
+    margin: 1rem auto;
+  }
   .sticky {
     top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  #infoContainer {
+    margin: 1rem 20px;
   }
 }
