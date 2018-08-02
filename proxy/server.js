@@ -37,7 +37,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
         : "http://localhost:3001"
   })
 );
@@ -47,7 +47,7 @@ app.use(
   proxy({
     target:
       process.env.ENV === "prod"
-        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com"
+        ? "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001"
         : "http://localhost:3001"
   })
 );
