@@ -23,7 +23,13 @@ body {
 }
 
 #book {
+  width: 376px;
   margin: 1rem;
+}
+
+.sticky {
+  position: fixed;
+  top: 1rem;
 }
 
 @media (max-width: 1123px) {
