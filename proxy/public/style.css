@@ -13,8 +13,8 @@ body {
 
 #listingContainer {
   display: flex;
-  margin: auto;
   width: fit-content;
+  margin: auto;
 }
 
 #Details {
