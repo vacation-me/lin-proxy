@@ -10,6 +10,7 @@
 
 <body>
   <div id="Navigation"></div>
+  <script src="/utils.js"></script>
   <script src="/lib/react.development.js"></script>
   <script src="/lib/react-dom.development.js"></script>
   <script src="/lib/react-router-dom.js"></script>
@@ -32,20 +33,6 @@
       )
     );
     ReactDOM.render(navigation, document.getElementById('Navigation'));
-  </script>
-  <script>
-    var scrollSticky = function () {
-      var booking = document.getElementById('book');
-      if (booking) {
-        var sticky = booking.offsetTop;
-        if (window.pageYOffset > sticky - 12) {
-          booking.children[0].classList.add('sticky');
-        } else {
-          booking.children[0].classList.remove('sticky');
-        }
-      }
-    };
-    window.onscroll = scrollSticky;
   </script>
 </body>
 
