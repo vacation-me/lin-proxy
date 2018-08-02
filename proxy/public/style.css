@@ -11,5 +11,23 @@ body {
   margin: 0;
 }
 
-#Book {
+#listingContainer {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+}
+
+#Details {
+  flex: 1;
+  margin-right: 0;
+}
+
+#book {
+  margin: 1rem;
+}
+
+@media (max-width: 1123px) {
+  #book {
+    width: 0;
+  }
 }
