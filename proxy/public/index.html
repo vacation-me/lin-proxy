@@ -34,22 +34,18 @@
     ReactDOM.render(navigation, document.getElementById('Navigation'));
   </script>
   <script>
-    var stickyScroll = function (booking) {
-      var sticky = booking.offsetTop;
-      window.onscroll = function () {
+    var scrollSticky = function () {
+      var booking = document.getElementById('book');
+      if (booking) {
+        var sticky = booking.offsetTop;
         if (window.pageYOffset > sticky - 12) {
           booking.children[0].classList.add('sticky');
         } else {
           booking.children[0].classList.remove('sticky');
         }
-      };
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      var booking = document.getElementById('book');
-      if (booking) {
-        stickyScroll(booking);
       }
-    });
+    };
+    window.onscroll = scrollSticky;
   </script>
 </body>
 
