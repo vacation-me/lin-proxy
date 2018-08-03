@@ -1,14 +1,13 @@
-html,
 body {
   margin: 0;
-  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  color: #484848;
 }
 
 #Navigation {
   width: 100%;
   margin: 0;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  color: #484848;
 }
 
 #listingContainer {
