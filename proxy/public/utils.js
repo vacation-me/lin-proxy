@@ -23,4 +23,4 @@ var scrollSticky = function() {
   }
 };
 
-window.onscroll = debounce(scrollSticky, 0);
+window.onscroll = scrollSticky;
