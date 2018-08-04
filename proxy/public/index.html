@@ -12,9 +12,6 @@
   <div id="Navigation"></div>
 
   <script src="/utils.js"></script>
-  <script src="/lib/react.production.min.js"></script>
-  <script src="/lib/react-dom.production.min.js"></script>
-  <script src="/lib/react-router-dom.min.js"></script>
 
   <script src="https://s3.amazonaws.com/fec-navigation-static-files/dist/bundle.js"></script>
   <script src="https://s3.amazonaws.com/photosbundled/app.js"></script>
@@ -22,28 +19,7 @@
   <script src="https://s3-us-west-1.amazonaws.com/david-proxy/bundle.js"></script>
   <script src="https://s3-us-west-1.amazonaws.com/bookings-module-static-assets/bundle.js"></script>
 
-  <script>
-    const { BrowserRouter, Route } = ReactRouterDOM;
-    const navigation = React.createElement(
-      BrowserRouter, null,
-      React.createElement('div', null,
-        React.createElement(Route, { exact: true, path: '/', component: Landing }),
-        React.createElement(Route, { path: '/search/:searchQuery', component: Navbar }),
-        React.createElement(Route, { path: '/search/:searchQuery', component: Results }),
-        React.createElement(Route, { path: '/listing/:listingId', component: Navbar }),
-        React.createElement('div', { id: 'photosContainer' },
-          React.createElement(Route, { path: '/listing/:listingId', component: Photos }),
-        ),
-        React.createElement('div', { id: 'listingContainer' },
-          React.createElement('div', { id: 'infoContainer' },
-            React.createElement(Route, { path: '/listing/:listingId', component: Details }),
-            React.createElement(Route, { path: '/listing/:listingId', component: Reviews })),
-          React.createElement(Route, { path: '/listing/:listingId', component: Book })
-        )
-      )
-    );
-    ReactDOM.render(navigation, document.getElementById('Navigation'));
-  </script>
+  <script src="/dist/index.js"></script>
 </body>
 
 </html>
