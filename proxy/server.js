@@ -10,7 +10,8 @@ app.use("/", express.static("public"));
 app.use("/listing/:listingId", express.static("public"));
 app.use("/search/:searchQuery", express.static("public"));
 
-// Commented out code can be activated if you want to run
+/**************************************************************/
+// Commented out code below can be activated if you want to run
 // this proxy locally, in which case the 5 different
 // services need to be running on the appropriate ports.
 
