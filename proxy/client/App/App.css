@@ -6,6 +6,10 @@ h1 {
   width: 100%;
 }
 
+#photosContainer > * {
+  margin: 0;
+}
+
 #photosContainer .backdrop {
   z-index: 1000;
 }
