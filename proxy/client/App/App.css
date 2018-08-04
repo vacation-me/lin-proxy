@@ -1,0 +1,54 @@
+#photosContainer {
+  width: 100%;
+}
+
+#photosContainer .backdrop {
+  z-index: 1000;
+}
+
+#listingContainer {
+  display: flex;
+  width: fit-content;
+  margin: 2rem 0 0;
+  margin: auto;
+}
+
+#infoContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 600px;
+  margin: 1rem 4rem 4rem auto;
+}
+
+#Reviews {
+  margin: 2rem 0 0;
+}
+
+#book {
+  width: 376px;
+  margin: 1rem;
+}
+
+.sticky {
+  position: fixed;
+  top: 1rem;
+}
+
+@media (max-width: 1123px) {
+  #book {
+    width: 0;
+  }
+  #infoContainer {
+    margin: 1rem auto 10rem;
+  }
+  .sticky {
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  #infoContainer {
+    margin: 1rem 20px 10rem;
+  }
+}

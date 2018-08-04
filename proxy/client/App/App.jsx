@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
+import "./App.css";
+
 const App = () => (
   <BrowserRouter>
     <div>
@@ -37,34 +39,3 @@ const App = () => (
 );
 
 module.exports = App;
-
-//     React.createElement(
-//       "div",
-//       { id: "photosContainer" },
-//       React.createElement(Route, {
-//         path: "/listing/:listingId",
-//         component: Photos
-//       })
-//     ),
-//     React.createElement(
-//       "div",
-//       { id: "listingContainer" },
-//       React.createElement(
-//         "div",
-//         { id: "infoContainer" },
-//         React.createElement(Route, {
-//           path: "/listing/:listingId",
-//           component: Details
-//         }),
-//         React.createElement(Route, {
-//           path: "/listing/:listingId",
-//           component: Reviews
-//         })
-//       ),
-//       React.createElement(Route, {
-//         path: "/listing/:listingId",
-//         component: Book
-//       })
-//     )
-//   )
-// );
