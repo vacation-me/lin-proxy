@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "docker build -t dev . && docker run -d -p 3000:3000 -v $(pwd):/app --name dev-container dev",
-    "clean:D": "docker stop dev-container && docker rm dev-container && docker rmi dev",
+    "containerize": "docker build -t dev . && docker run -d -p 3000:3000 -v $(pwd):/app --name dev-container dev",
+    "decontainerize": "docker stop dev-container && docker rm dev-container && docker rmi dev",
     "build:dev": "webpack --watch --mode development",
     "build:prod": "webpack --mode production",
-    "build:D": "docker build . -t bcronin2/fec-airbnh-proxy && docker push bcronin2/fec-airbnh-proxy",
+    "dockerize": "docker build . -t bcronin2/fec-airbnh-proxy && docker push bcronin2/fec-airbnh-proxy",
     "start": "nodemon ./server.js"
   },
   "keywords": [],
