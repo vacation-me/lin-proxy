@@ -10,9 +10,18 @@ body {
   color: #484848;
 }
 
+#photosContainer {
+  width: 100%;
+}
+
+#photosContainer .backdrop {
+  z-index: 1000;
+}
+
 #listingContainer {
   display: flex;
   width: fit-content;
+  margin: 2rem 0 0;
   margin: auto;
 }
 

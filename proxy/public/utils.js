@@ -14,8 +14,7 @@ var debounce = function(func, timeout) {
 var scrollSticky = function() {
   var booking = document.getElementById("book");
   if (booking) {
-    var sticky = booking.offsetTop;
-    if (window.pageYOffset > sticky - 12) {
+    if (window.pageYOffset > booking.offsetTop - 12) {
       booking.children[0].classList.add("sticky");
     } else {
       booking.children[0].classList.remove("sticky");

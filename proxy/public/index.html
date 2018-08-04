@@ -17,6 +17,7 @@
   <script src="/lib/react-router-dom.min.js"></script>
 
   <script src="https://s3.amazonaws.com/fec-navigation-static-files/dist/bundle.js"></script>
+  <script src="https://s3.amazonaws.com/photosbundled/app.js"></script>
   <script src="https://s3.amazonaws.com/fec-listing-details-static-files/dist/bundle.js"></script>
   <script src="https://s3-us-west-1.amazonaws.com/david-proxy/bundle.js"></script>
   <script src="https://s3-us-west-1.amazonaws.com/bookings-module-static-assets/bundle.js"></script>
@@ -30,6 +31,9 @@
         React.createElement(Route, { path: '/search/:searchQuery', component: Navbar }),
         React.createElement(Route, { path: '/search/:searchQuery', component: Results }),
         React.createElement(Route, { path: '/listing/:listingId', component: Navbar }),
+        React.createElement('div', { id: 'photosContainer' },
+          React.createElement(Route, { path: '/listing/:listingId', component: Photos }),
+        ),
         React.createElement('div', { id: 'listingContainer' },
           React.createElement('div', { id: 'infoContainer' },
             React.createElement(Route, { path: '/listing/:listingId', component: Details }),

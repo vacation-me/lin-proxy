@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "docker build -t dev . && docker run -p 3000:3000 -v $(pwd):/app --name dev-container dev",
     "build": "docker build . -t bcronin2/fec-airbnh-proxy && docker push bcronin2/fec-airbnh-proxy",
     "start": "nodemon ./server.js"
   },

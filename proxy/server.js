@@ -52,6 +52,17 @@ app.use(
   })
 );
 
+// photos
+app.use(
+  "/api/listing/:listingId",
+  proxy({
+    target:
+      process.env.ENV === "prod"
+        ? "http://ec2-18-212-74-66.compute-1.amazonaws.com:80"
+        : "http://127.0.0.1:3002"
+  })
+);
+
 // reviews
 app.use(
   "/reviews/:id",
