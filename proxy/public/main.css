@@ -1,0 +1,332 @@
+.App__container___2M8OT {
+  float: right;
+  margin-right: 10%;
+  opacity: 1.0;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+button {
+  background-color: transparent;
+}
+
+.App__bookings___3mteW {
+  width: 326px;
+  min-height: 380px;
+  padding: 0 24px;
+  border: 1px solid lightgrey;
+}
+
+.App__subComponent___30VgW {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 20px;
+  margin: 30px 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+
+.App__text___3XTuI {
+  text-align: center;
+  margin: 5px;
+  font-weight: 400;
+}
+
+.App__icon___2_C6t {
+  height: 25px;
+  cursor: pointer;
+}
+
+.App__smallIcon___xdO00 {
+  height: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.App__largeIcon___25fui {
+  height: 30px;
+  cursor: pointer;
+}
+
+.App__price___2Uie6 {
+  font-weight: 400;
+}
+
+.App__report___1lwH2 {
+  border: none;
+  justify-content: center;
+}
+
+.App__bookBtn___1m3_I {
+  justify-content: center;
+  background-color: #FF5A5F;
+  color: #ffffff;
+  height: 50px;
+  width: 100%;
+  font-size: large;
+}
+
+.App__currentStage___3qoD3 {
+  background-color: rgb(51, 218, 205);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.App__closeModalBtn___1hU0_ {
+  display: none;
+}
+
+.App__footerView___3J180,
+.App__footerPrice___KsAtG,
+.App__footerSubmitBtn___3coxx {
+  display: none;
+}
+
+
+@media (max-width: 1123px) {
+  .App__footerSubmitBtn___3coxx {
+    top: 0;
+    position: absolute;
+    right: 10%;
+    height: 45px;
+    width: 186px;
+    font-weight: 200;
+    font-size: large;
+    background-color: #FF5A5F;
+    color: #ffffff;
+  }
+
+  .App__footerPrice___KsAtG, .App__footerSubmitBtn___3coxx {
+    display: block;
+  }
+
+  .App__footerView___3J180 {
+    position: fixed;
+    display: block;
+    align-items: center;
+    bottom: 0;
+    margin: 0;
+    padding: 20px 6%;
+    left: 0;
+    right: 0;
+    height: 65px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: #ffffff;
+  }
+  
+  .App__bookingsContainer___1Tf0O {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4)
+  }
+
+  .App__bookings___3mteW {
+    opacity: 1.0;
+    background-color: #ffffff;
+    height: auto;
+  }
+  
+  .App__cleaningFeePopUp___1Z86k, .App__serviceFeePopUp___1Ow-V, .App__taxesPopUp___1ONmF {
+    top: inherit;
+    right: inherit;
+  }
+
+  .App__closeModalBtn___1hU0_ {
+    float: right;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.46);
+    margin-top: 11px;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+  }
+}
+
+@media (max-width: 405px) {
+  .App__bookings___3mteW {
+    width: 100%;
+    height: 100%;
+  }
+}
+.Calendar__calContainer___3vUZr {
+  background-color: #ffffff;
+  opacity: 1.0;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  width: 333px;
+  position: absolute;
+  top: 155px;
+  padding: 4px;
+  cursor: pointer;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Calendar__calendar___xhFrn {
+  min-height: 298px;
+  width: 318px;
+}
+
+.Calendar__calendarTitle___21OhP {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Calendar__calTitle___1bsf_ {
+  display: inline-flex;
+  margin: 5px;
+}
+
+.Calendar__selectedDate___2n0j1 {
+  background-color: rgb(0, 166, 153);
+}
+.Calendar__avail___2E-O8:hover, .Calendar__range___2xPIe {
+  background-color: rgb(51, 218, 205);
+  cursor: pointer;
+}
+
+.Calendar__booked___141r6, .Calendar__booked___141r6:hover {
+  color: rgba(167, 167, 167, 0.295);
+  background-color: white;
+  border: 1px solid lightgray;
+  
+}
+
+.Calendar__calHeaders___2fpF_ {
+  font-weight: 200;
+}
+
+.Calendar__day___2Oufc {
+  margin: 0;
+  border: 1px solid lightgray;
+  min-width: 38px;
+}
+
+.Calendar__icon___1pyYK {
+}
+
+.Calendar__subComponent___O6Viq {
+}
+
+@media (max-width: 1123px) {
+  .Calendar__calContainer___3vUZr {
+    top: inherit;
+    margin-top: -30px;
+  }
+}
+.Price__pricingInfoEntry___3BSyZ {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Price__price___1gQnE {
+  font-weight: 400;
+}
+
+.Price__report___2TZoH {
+  border: none;
+  justify-content: center;
+}
+
+.Price__bookBtn___bamw8, .Price__footerSubmitBtn___3Zybp {
+  justify-content: center;
+  background-color: #FF5A5F;
+  color: #ffffff;
+  height: 50px;
+}
+
+.Price__cleaningFeePopUp___kWqgC, .Price__serviceFeePopUp___1siGr, .Price__taxesPopUp___2WF34 {
+  background-color: rgb(255, 255, 255);
+  box-shadow: lightgrey 0px 0px 2px;
+  border: 1px solid lightgray;
+  position: absolute;
+  text-align: left;
+  padding: 5px;
+  opacity: 1.0;
+}
+
+.Price__cleaningFeePopUp___kWqgC {
+  width: 244px;
+  height: 100px;
+  top: 200px;
+  right: 340px;
+}
+
+.Price__serviceFeePopUp___1siGr {
+  width: 244px;
+  height: 100px;
+  top: 270px;
+  right: 340px;
+}
+
+.Price__taxesPopUp___2WF34 {
+  width: 278px;
+  height: 64px;
+  top: 380px;
+  right: 260px;
+}
+
+.Price__smallIcon___12NzZ {
+}
+.Guests__guestToggle___28XnN {
+  width: 326px;
+  height: auto;
+  top: 205px;
+  text-align: left;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1.0;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+}
+
+.Guests__adultGuestToggle___2vmyh, .Guests__childGuestToggle___1kob5, .Guests__infantGuestToggle___2Ym24 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.Guests__guestLabel___4xfzV {
+  min-width: 140px;
+}
+
+.Guests__disabled___3bMw_ {
+  opacity: 0.1;
+}
+
+.Guests__icon___1aZUE {
+}
+
+.Guests__text___3x-8H {
+}
+
+@media (max-width: 1123px) {
+  .Guests__guestToggle___28XnN {
+    top: inherit;
+    margin-top: -30px;
+  }
+}
