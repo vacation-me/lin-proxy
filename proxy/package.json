@@ -1,5 +1,5 @@
 {
-  "name": "AirBnH",
+  "name": "vacation-me",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,18 +10,21 @@
     "build:prod": "webpack --mode production",
     "build:docker": "docker build . -t bcronin2/fec-airbnh-proxy && docker push bcronin2/fec-airbnh-proxy",
     "build:all": "npm run build:prod && npm run build:docker",
-    "start": "nodemon ./server.js"
+    "start": "node ./server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.1",
     "express": "^4.16.2",
     "http-proxy-middleware": "^0.18.0",
     "morgan": "^1.9.0",
+    "node-fetch": "^2.2.0",
     "nodemon": "^1.18.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -33,6 +36,7 @@
     "babel-loader": "^7.1.5",
     "css-loader": "^1.0.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.16.4"
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
   }
 }

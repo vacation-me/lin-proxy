@@ -1,104 +1,42 @@
-const express = require("express");
-const proxy = require("http-proxy-middleware");
-const morgan = require("morgan");
+const express = require('express')
+const morgan = require('morgan');
+const path = require('path');
+const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(morgan("dev"));
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use("/", express.static("public"));
-app.use("/listing/:listingId", express.static("public"));
-app.use("/search/:searchQuery", express.static("public"));
+const clientBundles = './public/services';
+const serverBundles = './templates/services';
+const serviceConfig = require('./service-config.json');
+const services = require('./loader.js')(clientBundles, serverBundles, serviceConfig);
 
-/**************************************************************/
-// Commented out code below can be activated if you want to run
-// this proxy locally, in which case the 5 different
-// services need to be running on the appropriate ports.
+const React = require('react');
+const ReactDom = require('react-dom/server');
+const Layout = require('./templates/layout');
+const App = require('./templates/app');
+const Scripts = require('./templates/scripts');
 
-// navigation
-app.use(
-  "/api/searchRecords",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:2999"
-  })
-);
+// see: https://medium.com/styled-components/the-simple-guide-to-server-side-rendering-react-with-styled-components-d31c6b2b8fbf
+const renderComponents = (components, props = {}) => {
+  return Object.keys(components).map(item => {
+    let component = React.createElement(components[item], props);
+    return ReactDom.renderToString(component);
+  });
+};
 
-app.use(
-  "/api/searchListings/:searchQuery",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-34-217-69-244.us-west-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:2999"
-  })
-);
-
-// details
-app.use(
-  "/api/details/:listingId",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:3001"
-  })
-);
-
-app.use(
-  "/api/details/:listingId/highlights/:highlightId",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:3001"
-  })
-);
-
-// photos
-app.use(
-  "/api/listing/:listingId",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-18-212-74-66.compute-1.amazonaws.com:80"
-    // : "http://127.0.0.1:3002"
-  })
-);
-
-// reviews
-app.use(
-  "/reviews/:id",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-18-216-90-61.us-east-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:3003"
-  })
-);
-
-// bookings
-app.use(
-  "/api/listings/:listingId",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-13-59-22-40.us-east-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:3004"
-  })
-);
-
-app.use(
-  "/api/submit",
-  proxy({
-    target:
-      // process.env.ENV === "prod"
-      "http://ec2-13-59-22-40.us-east-2.compute.amazonaws.com:80"
-    // : "http://127.0.0.1:3004"
-  })
-);
+app.get('/listing/:listingId', function(req, res) {
+  axios.get(`http://sdc-service-1573183777.us-west-1.elb.amazonaws.com/api/listings/${req.params.listingId}`).then(({ data }) => {
+    let components = renderComponents(services, data);
+    res.end(Layout(
+      'vacation-me',
+      App(...components),
+      Scripts(Object.keys(services))
+    ));
+  });
+});
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
